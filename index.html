@@ -66,9 +66,20 @@
     </section>
 
     <section class="calc row">
+
+        <div class="tit col">
+            <h1 class="titulo">Estadísticos de prueba:</h1>
+            <div class="disp" id="lmao">
+            </div>
+        </div>
+        <div class="tit col">
+            <h1 class="titulo">Valor crítico:</h1>
+            <div class="disp" id="lmai">
+            </div>
+        </div>
         <div class="tit col">
             <h1 class="titulo">Conclusión:</h1>
-            <div class="disp" id="lmao">
+            <div class="disp" id="lmau">
             </div>
         </div>
         
@@ -487,14 +498,22 @@
 
         let valcrit = generar(ia,m);
         console.log(generar(ia,m));
+        let text2 = valcrit.toString();
+        let text1 = prueba.toString();
+        console.log(text2);
         
         if(prueba < valcrit){
             console.log("El conjunto de números pseudoaleatorios se consideran independientes.");
-            document.getElementById("lmao").innerHTML = "El conjunto de números pseudoaleatorios se consideran independientes.";
+           
+            document.getElementById("lmao").innerHTML = text1;
+            document.getElementById("lmai").innerHTML = text2;
+            document.getElementById("lmau").innerHTML = "El conjunto de números pseudoaleatorios se consideran independientes.";
         }
         else{
             console.log("El conjunto de números pseudoaleatorios no se consideran independientes.");
-            document.getElementById("lmao").innerHTML = "El conjunto de números pseudoaleatorios no se consideran independientes.";
+            document.getElementById("lmao").innerHTML = text1;
+            document.getElementById("lmai").innerHTML = text2;
+            document.getElementById("lmau").innerHTML = "El conjunto de números pseudoaleatorios no se consideran independientes.";
         }
 
 
