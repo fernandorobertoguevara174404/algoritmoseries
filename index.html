@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora algoritmo</title>
+</head>
+<body>
+    <div class="contain">
+        <h1>Algoritmo congruencial lineal</h1>
+    </div>
+    <section class="containe">
+        <form name="formu">
+            <label for="i">Cantidad de núms:</label>
+            <input type="number" id="icant" name="" required><br><br>
+
+            <label for="i">Valor a:</label>
+            <input type="number" id="ia" name="" required><br><br>
+
+            <div class="row">
+                <div class="col">
+                    <input type="number" class="inputs" id="a1" name="" required><br><br>
+                    <input type="number" class="inputs" id="a2" name="" required><br><br>
+                    <input type="number" class="inputs" id="a3" name="" required><br><br>
+                    <input type="number" class="inputs" id="a4" name="" required><br><br>
+                    
+                </div>
+                <div class="col">
+                    <input type="number" class="inputs" id="a5" name="" required><br><br>
+                    <input type="number" class="inputs" id="a6" name="" required><br><br>
+                    <input type="number" class="inputs" id="a7" name="" required><br><br>
+                    <input type="number" class="inputs" id="a8" name="" required><br><br>
+
+                    
+                </div>
+                <div class="col">
+                    <input type="number" class="inputs" id="a9" name="" required><br><br>
+                    <input type="number" class="inputs" id="a10" name="" required><br><br>
+                    <input type="number" class="inputs" id="a11" name="" required><br><br>
+                    <input type="number" class="inputs" id="a12" name="" required><br><br>
+                   
+                    
+                </div>
+                <div class="col">
+                    <input type="number" class="inputs" id="a13" name="" required><br><br>
+                    <input type="number" class="inputs" id="a14" name="" required><br><br>
+                    <input type="number" class="inputs" id="a15" name="" required><br><br>
+                    <input type="number" class="inputs" id="a16" name="" required><br><br>
+                    
+                </div>
+                <div class="col">
+                    <input type="number" class="inputs" id="a17" name="" required><br><br>
+                    <input type="number" class="inputs" id="a18" name="" required><br><br>
+                    <input type="number" class="inputs" id="a19" name="" required><br><br>
+                    <input type="number" class="inputs" id="a20" name="" required><br><br>
+                </div>
+            </div>
+            
+        </form>
+
+        <button class="btn" onclick="validacion()">Calcular</button>
+
+    </section>
+
+    <section class="calc row">
+        <div class="tit col">
+            <h1 class="titulo">Conclusión:</h1>
+            <div class="disp" id="lmao">
+            </div>
+        </div>
+        
+    </section>
+
+
+<script>
+    function validacion()
+    {   
+
+
+        let i1 = document.forms["formu"]["a1"].value;
+        let i2 = document.forms["formu"]["a2"].value;
+        let i3 = document.forms["formu"]["a3"].value;
+        let i4 = document.forms["formu"]["a4"].value;
+        let i5 = document.forms["formu"]["a5"].value;
+        let i6 = document.forms["formu"]["a6"].value;
+        let i7 = document.forms["formu"]["a7"].value;
+        let i8 = document.forms["formu"]["a8"].value;
+        let i9 = document.forms["formu"]["a9"].value;
+        let i10 = document.forms["formu"]["a10"].value;
+        let i11 = document.forms["formu"]["a11"].value;
+        let i12 = document.forms["formu"]["a12"].value;
+        let i13 = document.forms["formu"]["a13"].value;
+        let i14 = document.forms["formu"]["a14"].value;
+        let i15 = document.forms["formu"]["a15"].value;
+        let i16 = document.forms["formu"]["a16"].value;
+        let i17 = document.forms["formu"]["a17"].value;
+        let i18 = document.forms["formu"]["a18"].value;
+        let i19 = document.forms["formu"]["a19"].value;
+        let i20 = document.forms["formu"]["a20"].value;
+        let icant = document.forms["formu"]["icant"].value;
+        let ia = document.forms["formu"]["ia"].value;
+
+
+        if (i1 == "" || i2 == "" || i3 == "" || i4 == "" || i5 == "" || i6 == "" || i7 == "" || i8 == "" || i9 == "" || i10 == "" || i11 == "" || i12 == "" || i13 == "" || i14 == "" || i15 == "" || i16 == "" || i17 == "" || i18 == "" || i19 == "" || i20 == "" || ia == "" || icant == "") {
+            alert("Llene los campos");
+          }
+          else
+          {
+              calcular();
+          }
+
+    }
+
+    function calcular()
+    {
+        
+        let i1 = document.forms["formu"]["a1"].value;
+        let i2 = document.forms["formu"]["a2"].value;
+        let i3 = document.forms["formu"]["a3"].value;
+        let i4 = document.forms["formu"]["a4"].value;
+        let i5 = document.forms["formu"]["a5"].value;
+        let i6 = document.forms["formu"]["a6"].value;
+        let i7 = document.forms["formu"]["a7"].value;
+        let i8 = document.forms["formu"]["a8"].value;
+        let i9 = document.forms["formu"]["a9"].value;
+        let i10 = document.forms["formu"]["a10"].value;
+        let i11 = document.forms["formu"]["a11"].value;
+        let i12 = document.forms["formu"]["a12"].value;
+        let i13 = document.forms["formu"]["a13"].value;
+        let i14 = document.forms["formu"]["a14"].value;
+        let i15 = document.forms["formu"]["a15"].value;
+        let i16 = document.forms["formu"]["a16"].value;
+        let i17 = document.forms["formu"]["a17"].value;
+        let i18 = document.forms["formu"]["a18"].value;
+        let i19 = document.forms["formu"]["a19"].value;
+        let i20 = document.forms["formu"]["a20"].value;
+        let icant = document.forms["formu"]["icant"].value;
+        let ia = document.forms["formu"]["ia"].value;
+        
+        console.log(i1);
+        // let numeros = [0.3972,0.8298,0.3588,0.3784,
+        //                 0.7026,0.6484,0.7041,0.1746,
+        //                 0.1056,0.6972,0.5915,0.3362,
+        //                 0.1248,0.9582,0.2523,0.1589,
+        //                 0.1977,0.9085,0.2546,0.3728];
+
+        let numeros = [i1,i2,i3,i4,
+        i5,i6,i7,i8,
+        i9,i10,i11,i12,
+        i13,i14,i15,i16,
+        i17,i18,i19,i20];
+
+        console.log(numeros);
+        let valor1 = numeros.length-1;
+        let cant = icant; 
+        let valor2 = Math.sqrt(cant);
+        let m = Math.round(valor2);
+        let interval = (m*m);
+
+        let numeros2 = new Array(valor1).fill(0);
+        for(let i = 0; i < valor1; i++)
+        {
+            numeros2[i] = numeros[i]; 
+                
+        }
+        console.log(numeros2);
+        
+        let numeros3 = new Array(valor1).fill(0);
+        for(let i = 0; i < valor1; i++)
+        {
+            numeros3[i] = numeros[i+1]; 
+                
+        }
+        console.log(numeros3);
+
+        let cuenta = 0;
+        
+        let foi = new Array(interval).fill(0);
+        let estadis = new Array(interval).fill(0);
+        
+
+        for(let i = 0; i < interval; i++)
+        {
+            
+            cuenta = 0;
+                for(let j = 0; j < valor1; j++)
+                {
+                    //Intervalo X - 1
+                    if(numeros2[j]>0 && numeros2[j]<0.25 && numeros3[j]>0 && numeros3[j]<0.25 && i == 0)
+                    {
+                         cuenta = cuenta + 1;
+
+                    }
+                    if(numeros2[j]>0 && numeros2[j]<0.25 && numeros3[j]>=0.25 && numeros3[j]<0.50 && i == 1)
+                    {
+                         cuenta = cuenta + 1;
+
+                    }
+                    if(numeros2[j]>0 && numeros2[j]<0.25 && numeros3[j]>=0.50 && numeros3[j]<0.75 && i == 2)
+                    {
+                         cuenta = cuenta + 1;
+
+                    }
+                    if(numeros2[j]>0 && numeros2[j]<0.25 && numeros3[j]>=0.75 && numeros3[j]<1 && i == 3)
+                    {
+                         cuenta = cuenta + 1;
+
+                    }
+
+                    //Intervalo X - 2
+                    if(numeros2[j]>=0.25 && numeros2[j]<0.50 && numeros3[j]>0 && numeros3[j]<0.25 && i == 4)
+                    {
+                         cuenta = cuenta + 1;
+
+                    }
+                    if(numeros2[j]>=0.25 && numeros2[j]<0.50 && numeros3[j]>=0.25 && numeros3[j]<0.50 && i == 5)
+                    {
+                         cuenta = cuenta + 1;
+
+                    }
+                    if(numeros2[j]>=0.25 && numeros2[j]<0.50 && numeros3[j]>=0.50 && numeros3[j]<0.75 && i == 6)
+                    {
+                         cuenta = cuenta + 1;
+
+                    }
+                    if(numeros2[j]>=0.25 && numeros2[j]<0.50 && numeros3[j]>=0.75 && numeros3[j]<1 && i == 7)
+                    {
+                         cuenta = cuenta + 1;
+
+                    }
+
+                    //Intervalo X - 3
+                    if(numeros2[j]>=0.50 && numeros2[j]<0.75 && numeros3[j]>0 && numeros3[j]<0.25 && i == 8)
+                    {
+                         cuenta = cuenta + 1;
+
+                    }
+                    if(numeros2[j]>=0.50 && numeros2[j]<0.75 && numeros3[j]>=0.25 && numeros3[j]<0.50 && i == 9)
+                    {
+                         cuenta = cuenta + 1;
+
+                    }
+                    if(numeros2[j]>=0.50 && numeros2[j]<0.75 && numeros3[j]>=0.50 && numeros3[j]<0.75 && i == 10)
+                    {
+                         cuenta = cuenta + 1;
+
+                    }
+                    if(numeros2[j]>=0.50 && numeros2[j]<0.75 && numeros3[j]>=0.75 && numeros3[j]<1 && i == 11)
+                    {
+                         cuenta = cuenta + 1;
+
+                    }
+
+                    //Intervalo X - 4
+                    if(numeros2[j]>=0.75 && numeros2[j]<1 && numeros3[j]>0 && numeros3[j]<0.25 && i == 12)
+                    {
+                         cuenta = cuenta + 1;
+
+                    }
+                    if(numeros2[j]>=0.75 && numeros2[j]<1 && numeros3[j]>=0.25 && numeros3[j]<0.50 && i == 13)
+                    {
+                         cuenta = cuenta + 1;
+
+                    }
+                    if(numeros2[j]>=0.75 && numeros2[j]<1 && numeros3[j]>=0.50 && numeros3[j]<0.75 && i == 14)
+                    {
+                         cuenta = cuenta + 1;
+
+                    }
+                    if(numeros2[j]>=0.75 && numeros2[j]<1 && numeros3[j]>=0.75 && numeros3[j]<1 && i == 15)
+                    {
+                         cuenta = cuenta + 1;
+
+                    }
+
+                }
+            foi[i] = cuenta;
+
+
+        }
+
+        console.log(foi);
+
+        let fei = (numeros.length - 1)/(Math.pow(4,2));
+
+        for (let index = 0; index < interval; index++) {
+            estadis[index] = (Math.pow((fei - foi[index]),2)/fei);
+        }
+        
+        let prueba = 0;
+        for (let i = 0; i < interval; i++) {
+            prueba = prueba + estadis[i];
+        }
+
+        console.log(prueba);
+
+        function generar(a,n){
+                n = Math.pow(n,2) - 1;
+                if (n == 1 && a == 0.99) {
+                    return  0.0002;
+                }
+                if (n == 2 && a == 0.99) {
+                    return  0.0201;
+                }
+                if (n == 3 && a == 0.99) {
+                    return  0.1148;
+                }
+                if (n == 4 && a == 0.99) {
+                    return  0.2971;
+                }
+                if (n == 5 && a == 0.99) {
+                    return  0.5543;
+                }
+                if (n == 6 && a == 0.99) {
+                    return 0.8721;
+                }
+                if (n == 7 && a == 0.99) {
+                    return 1.2390;
+                }
+                if (n == 8 && a == 0.99) {
+                    return 1.6465;
+                }
+                if (n == 9 && a == 0.99) {
+                    crit=2.0879;
+                }
+                if (n == 10 && a == 0.99) {
+                    return 2.5582;
+                }
+                if (n == 11 && a == 0.99) {
+                    return 3.0535;
+                }
+                if (n == 12 && a == 0.99) {
+                    return 3.5706;
+                }
+                if (n == 13 && a == 0.99) {
+                    return 4.1069;
+                }
+                if (n == 14 && a == 0.99) {
+                    return 4.6604;
+                }
+                if (n == 15 && a == 0.99) {
+                    return 5.2294;
+                }
+                if (n == 16 && a == 0.99) {
+                    return 5.8122;
+                }
+                if (n == 17 && a == 0.99) {
+                    return 6.4077;
+                }
+                if (n == 18 && a == 0.99) {
+                    return 7.0149;
+                }
+                if (n == 19 && a == 0.99) {
+                    return 7.6327;
+                }
+                if (n == 20 && a == 0.99) {
+                    return 8.2604;
+                }
+                if (n == 20 && a == 0.99) {
+                    return 8.2604;
+                }
+                if (n == 1 && a == 0.01) {
+                    return 6.6349;
+                }
+                if (n == 2 && a == 0.01) {
+                    return 9.2104;
+                }
+                if (n == 3 && a == 0.01) {
+                    return 11.3449;
+                }
+                if (n == 4 && a == 0.01) {
+                    return 13.2767;
+                }
+                if (n == 5 && a == 0.01) {
+                    return 15.0863;
+                }
+                if (n == 6 && a == 0.01) {
+                    return 16.8119;
+                }
+                if (n == 7 && a == 0.01) {
+                    return 18.4753;
+                }
+                if (n == 8 && a == 0.01) {
+                    return 20.0902;
+                }
+                if (n == 9 && a == 0.01) {
+                    return 21.6660;
+                }
+                if (n == 10 && a == 0.01) {
+                    return 23.2093;
+                }
+                if (n == 11 && a == 0.01) {
+                    return 24.7250;
+                }
+                if (n == 12 && a == 0.01) {
+                    return 26.2170;
+                }
+                if (n == 13 && a == 0.01) {
+                    return 27.6882;
+                }
+                if (n == 14 && a == 0.01) {
+                    return 29.1412;
+                }
+                if (n == 15 && a == 0.01) {
+                    return 30.5780;
+                }
+                if (n == 16 && a == 0.01) {
+                    return 31.9999;
+                }
+                if (n == 17 && a == 0.01) {
+                    return 33.4087;
+                }
+                if (n == 18 && a == 0.01) {
+                    return 34.8052;
+                }
+                if (n == 19 && a == 0.01) {
+                    return 36.1908;
+                }
+                if (n == 20 && a == 0.01) {
+                    return 37.5663;
+                }
+                if (n ==1  && a == 0.05) {
+                    return 3.8415;
+                }
+                if (n ==2  && a == 0.05) {
+                    return 5.9915;
+                }
+                if (n ==3  && a == 0.05) {
+                    return 7.8147;
+                }
+                if (n ==4  && a == 0.05) {
+                    return 9.4877;
+                }
+                if (n ==5  && a == 0.05) {
+                    return 11.0705;
+                }
+                if (n ==6  && a == 0.05) {
+                    return 12.5916;
+                }
+                if (n ==7  && a == 0.05) {
+                    return 14.0671;
+                }
+                if (n ==8  && a == 0.05) {
+                    return 15.5073;
+                }
+                if (n ==9  && a == 0.05) {
+                    return 16.9190;
+                }
+                if (n ==10  && a == 0.05) {
+                    return 18.3070;
+                }
+                if (n ==11  && a == 0.05) {
+                    return 19.6752;
+                }
+                if (n ==12  && a == 0.05) {
+                    return 21.0261;
+                }
+                if (n ==13  && a == 0.05) {
+                    return 22.3620;
+                }
+                if (n ==14  && a == 0.05) {
+                    return 23.6848;
+                }
+                if (n ==15  && a == 0.05) {
+                    return 24.9958;
+                }
+                if (n ==16  && a == 0.05) {
+                    return 26.2962;
+                }
+                if (n ==17  && a == 0.05) {
+                    return 27.5771;
+                }
+                if (n ==18  && a == 0.05) {
+                    return 28.8693;
+                }
+                if (n ==19  && a == 0.05) {
+                    return 30.1435;
+                }
+                if (n ==20  && a == 0.05) {
+                    return 31.4104;
+                }
+
+            }
+
+        let valcrit = generar(ia,m);
+        console.log(generar(ia,m));
+        
+        if(prueba < valcrit){
+            console.log("El conjunto de números pseudoaleatorios se consideran independientes.");
+            document.getElementById("lmao").innerHTML = "El conjunto de números pseudoaleatorios se consideran independientes.";
+        }
+        else{
+            console.log("El conjunto de números pseudoaleatorios no se consideran independientes.");
+            document.getElementById("lmao").innerHTML = "El conjunto de números pseudoaleatorios no se consideran independientes.";
+        }
+
+
+        }
+    
+    </script>
+</body>
+</html>
